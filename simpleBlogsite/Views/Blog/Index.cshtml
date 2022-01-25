@@ -1,0 +1,39 @@
+﻿@model IEnumerable<simpleBlogsite.Models.Blog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Blog Home Page ....!</h2>
+
+ 
+<table class="table">
+    
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+
+            <b style=" color :brown ; font-size :large "> @Html.DisplayFor(modelItem => item.Title)</b>
+            <br />
+            <p>
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+
+        </td>
+    </tr>
+    <tr>
+         <td><a href=" ~/Blog/@item.URl">Read Complete Article</a></td>
+    </tr>
+    <tr>
+
+        <td>
+          Category<a href=" ~/Blog/@item.Category">@Html.DisplayFor(modelItem => item.Category)</a>  
+        </td>
+
+        
+    </tr>
+}
+
+</table>

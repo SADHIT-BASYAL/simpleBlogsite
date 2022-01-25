@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Review_Blogs</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class=" bg-info">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Blog Sample", "Index", "Blog", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("BlogUpload", "BlogUpload", "Blog")</li>
+                    <li>@Html.ActionLink("Food", "Food", "Blog")</li>
+                    <li>@Html.ActionLink("Sports", "Sports", "Blog")</li>
+                    <li>@Html.ActionLink("Movies", "Movies", "Blog")</li>
+                    <li>@Html.ActionLink("Fashion", "Fashion", "Blog")</li>
+                    <li>@Html.ActionLink("Technology", "Technology", "Blog")</li>
+                    <li>@Html.ActionLink("Motivation", "Motivation", "Blog")</li>
+                    <li>@Html.ActionLink("Entertainment", "Entertainment", "Blog")</li>
+                    <li>@Html.ActionLink("News", "News", "Blog")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+         
+        <div class="row">
+            <div class="col-sm-6 col-md-5 col-lg-6">@RenderBody()</div>
+            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">Place Ads</div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @*@RenderBody()*@
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Review_Blogs</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
